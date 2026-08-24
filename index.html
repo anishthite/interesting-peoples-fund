@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Interesting People's Fund</title>
+  <meta name="description" content="Not a check-writing fund. Three to four hours a week helping random interesting people with their side projects and startups. Highly recommend.">
+  <link rel="icon" href="data:,">
+  <style>
+    @font-face {
+      font-family: "et-book";
+      src: url("assets/fonts/et-book-roman-line-figures.woff") format("woff");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "et-book";
+      src: url("assets/fonts/et-book-bold-line-figures.woff") format("woff");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --ink: #21160d;
+      --muted: #746756;
+      --paper: #fbf4e6;
+      --field: #f1e5d2;
+      --rule: #ddcfb8;
+      --line: #d8c8aa;
+      --soft-line: rgba(138, 108, 68, .18);
+      --measure: 880px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--field); }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 8%, rgba(255, 255, 255, .72), transparent 28rem),
+        linear-gradient(90deg, rgba(108, 74, 36, .035) 1px, transparent 1px) 0 0 / 28px 28px,
+        linear-gradient(var(--paper), var(--field));
+      color: var(--ink);
+      font: 18px/1.56 et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+      font-kerning: normal;
+      font-feature-settings: "kern" 1;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--muted);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    a:hover { text-decoration-color: var(--ink); }
+
+    .page {
+      width: min(var(--measure), calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(36px, 7vw, 82px) 0 76px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-weight: 400;
+      letter-spacing: -.02em;
+    }
+
+    /* ---------- hero ---------- */
+
+    .hero {
+      margin-bottom: clamp(46px, 8vw, 84px);
+      padding-bottom: clamp(24px, 4vw, 40px);
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .hero .kicker {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      font-size: 1rem;
+      letter-spacing: .06em;
+      text-transform: lowercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.9rem, 11vw, 6.4rem);
+      line-height: .92;
+      max-width: 12ch;
+    }
+
+    .hero .lede {
+      margin: 1.6rem 0 0;
+      max-width: 46ch;
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .hero .lede em { font-style: italic; }
+
+    .hero .fine {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* ---------- sections ---------- */
+
+    section { margin-top: clamp(46px, 8vw, 84px); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: clamp(14px, 3vw, 30px);
+      align-items: baseline;
+      border-top: 1px solid var(--line);
+      padding-top: 1.1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-num {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: .98;
+    }
+
+    .prose p {
+      max-width: 62ch;
+      margin-bottom: 1rem;
+    }
+
+    .prose .aside {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .pull {
+      margin: 1.8rem 0;
+      padding-left: 1.1rem;
+      border-left: 2px solid var(--ink);
+      font-style: italic;
+      font-size: clamp(1.15rem, 3vw, 1.4rem);
+      line-height: 1.4;
+      max-width: 40ch;
+    }
+
+    /* ---------- outcome & step lists ---------- */
+
+    .rows { border-top: 1px solid var(--line); }
+
+    .row {
+      display: grid;
+      grid-template-columns: minmax(160px, .62fr) minmax(0, 1fr);
+      gap: clamp(14px, 3vw, 30px);
+      align-items: baseline;
+      padding: .92rem 0;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .row .what { font-weight: 700; }
+    .row .how { color: var(--muted); }
+
+    .steps { counter-reset: step; border-top: 1px solid var(--line); }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: clamp(14px, 3vw, 30px);
+      align-items: baseline;
+      padding: .92rem 0;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .step::before {
+      content: counter(step, decimal-leading-zero);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .step .what { font-weight: 700; display: block; }
+    .step .how { color: var(--muted); }
+
+    /* ---------- arithmetic ---------- */
+
+    .arithmetic {
+      margin: 1.8rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 1.1rem 0;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      line-height: 1.5;
+    }
+
+    .arithmetic span { display: block; }
+    .arithmetic .muted { color: var(--muted); }
+    .arithmetic .sum { padding-top: .6rem; margin-top: .6rem; border-top: 1px solid var(--soft-line); font-weight: 700; }
+
+    /* ---------- contact ---------- */
+
+    .contact {
+      border-top: 1px solid var(--ink);
+      padding-top: 1.6rem;
+    }
+
+    .contact p { max-width: 56ch; }
+
+    .email {
+      display: inline-block;
+      margin-top: .4rem;
+      font-size: clamp(1.35rem, 4.5vw, 2.1rem);
+      line-height: 1.2;
+      text-decoration-color: var(--muted);
+    }
+
+    /* ---------- footer ---------- */
+
+    footer {
+      margin-top: clamp(56px, 9vw, 96px);
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    footer a { text-decoration-color: var(--rule); }
+    footer a:hover { text-decoration-color: var(--muted); }
+
+    /* ---------- mobile ---------- */
+
+    @media (max-width: 680px) {
+      body { font-size: 17px; }
+      .page {
+        width: calc(100% - 32px);
+        padding-top: 24px;
+      }
+      .section-head { grid-template-columns: 1fr; gap: 4px; margin-bottom: 1.2rem; }
+      .row { grid-template-columns: 1fr; gap: .08rem; }
+      .step { grid-template-columns: 40px minmax(0, 1fr); }
+      .hero { margin-bottom: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero" aria-labelledby="title">
+      <p class="kicker">est. about a year ago · one person's experiment</p>
+      <h1 id="title">The Interesting People's Fund</h1>
+      <p class="lede">It is not a fund. There are no checks, no term sheets, no LP updates. The asset under management is <em>three to four hours a week</em>, and it is invested in random interesting people.</p>
+      <p class="fine">A quiet argument that time, given away freely, compounds better than money.</p>
+    </header>
+
+    <section aria-labelledby="idea">
+      <div class="section-head">
+        <span class="section-num">§ 1</span>
+        <h2 id="idea">The Idea</h2>
+      </div>
+      <div class="prose">
+        <p>About a year ago I started something I half-jokingly call the <em>interesting people's fund</em>. The name is a lie in the most important way: it is not a check-writing fund. Not yet, anyway.</p>
+        <p>Instead of helping people with grants, I set aside three or four hours a week to help random people with their side projects and startups. That is the whole mechanism. No application, no cohort, no demo day. Just a standing allocation of attention for people building things they care about.</p>
+        <p class="aside">It turns out a few hours of focused help, from someone with no agenda, is a surprisingly rare resource.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="happened">
+      <div class="section-head">
+        <span class="section-num">§ 2</span>
+        <h2 id="happened">What Happened</h2>
+      </div>
+      <div class="prose">
+        <p>The portfolio, such as it is, is one year old. The returns, such as they are, look like this:</p>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <span class="what">VC funding</span>
+          <span class="how">Tiny inputs that helped people get venture backed.</span>
+        </div>
+        <div class="row">
+          <span class="what">Internships landed</span>
+          <span class="how">Right conversation at the right time beats a hundred applications.</span>
+        </div>
+        <div class="row">
+          <span class="what">Hiring matches</span>
+          <span class="how">Someone found the perfect fit for a role they were hiring for.</span>
+        </div>
+        <div class="row">
+          <span class="what">Lifelong friends</span>
+          <span class="how">The dividend nobody models and everybody should.</span>
+        </div>
+        <div class="row">
+          <span class="what">An education</span>
+          <span class="how">I have learned more from these people than from almost anything else this year.</span>
+        </div>
+      </div>
+      <div class="prose">
+        <p class="pull">All of that — funded startups, offers, friendships — from one year's worth of spare hours.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="how">
+      <div class="section-head">
+        <span class="section-num">§ 3</span>
+        <h2 id="how">How It Works</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <span class="what">Reach out</span>
+            <span class="how">Cold emails welcome. Tell me what you're building and where you're stuck.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <span class="what">We chat</span>
+            <span class="how">A call, a coffee, a long email thread. Whatever the problem wants.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <span class="what">I help</span>
+            <span class="how">Feedback, intros, technical eyes, a second opinion — whatever a few hours can buy.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <span class="what">No strings</span>
+            <span class="how">No equity, no favors owed, no follow-up obligation. Pay it forward if you like.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="start">
+      <div class="section-head">
+        <span class="section-num">§ 4</span>
+        <h2 id="start">Start Your Own</h2>
+      </div>
+      <div class="prose">
+        <p>The uncomfortable truth about this experiment is that there is nothing special about it, or about me. Anyone with a few spare hours and a willingness to answer cold emails can run the same strategy. I hope you do.</p>
+        <div class="arithmetic">
+          <span>3–4 hours a week</span>
+          <span class="muted">× 52 weeks ≈ 200 hours a year</span>
+          <span class="sum">= funded startups, landed internships, perfect hires, lifelong friends</span>
+        </div>
+        <p>The ROI is absurd, and mostly it isn't measurable in money at all. You learn what people are building before anyone else does. You collect friends who are going somewhere. And helping someone at exactly the right moment is one of the cheapest ways to feel like your week mattered.</p>
+        <p class="aside">Highly recommend.</p>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contact">
+      <div class="section-head" style="border-top: 0; padding-top: 0;">
+        <span class="section-num">§ 5</span>
+        <h2 id="contact">Get In Touch</h2>
+      </div>
+      <p>Working on a side project or a startup and want a second pair of eyes? The fund is open.</p>
+      <a class="email" href="mailto:anishthite@gmail.com">anishthite@gmail.com</a>
+    </section>
+
+    <footer>
+      <p>An experiment by <a href="https://anish.thite.site">Anish Thite</a>. Not investment advice — there is no money involved.</p>
+    </footer>
+
+  </main>
+</body>
+</html>
