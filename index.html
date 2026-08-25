@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Interesting People's Fund</title>
-  <meta name="description" content="Not a check-writing fund. Three to four hours a week helping random interesting people with their side projects and startups. Highly recommend.">
+  <title>The Side Project Fund</title>
+  <meta name="description" content="Not a fund. A few hours a week, given to whoever reaches out with a side project or a startup they're stuck on. Email me.">
   <link rel="icon" href="data:,">
   <style>
     @font-face {
@@ -149,31 +149,7 @@
       font-size: .95rem;
     }
 
-    .pull {
-      margin: 1.8rem 0;
-      padding-left: 1.1rem;
-      border-left: 2px solid var(--ink);
-      font-style: italic;
-      font-size: clamp(1.15rem, 3vw, 1.4rem);
-      line-height: 1.4;
-      max-width: 40ch;
-    }
-
-    /* ---------- outcome & step lists ---------- */
-
-    .rows { border-top: 1px solid var(--line); }
-
-    .row {
-      display: grid;
-      grid-template-columns: minmax(160px, .62fr) minmax(0, 1fr);
-      gap: clamp(14px, 3vw, 30px);
-      align-items: baseline;
-      padding: .92rem 0;
-      border-bottom: 1px solid var(--soft-line);
-    }
-
-    .row .what { font-weight: 700; }
-    .row .how { color: var(--muted); }
+    /* ---------- step list ---------- */
 
     .steps { counter-reset: step; border-top: 1px solid var(--line); }
 
@@ -195,21 +171,6 @@
 
     .step .what { font-weight: 700; display: block; }
     .step .how { color: var(--muted); }
-
-    /* ---------- arithmetic ---------- */
-
-    .arithmetic {
-      margin: 1.8rem 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 1.1rem 0;
-      font-size: clamp(1.1rem, 3vw, 1.35rem);
-      line-height: 1.5;
-    }
-
-    .arithmetic span { display: block; }
-    .arithmetic .muted { color: var(--muted); }
-    .arithmetic .sum { padding-top: .6rem; margin-top: .6rem; border-top: 1px solid var(--soft-line); font-weight: 700; }
 
     /* ---------- contact ---------- */
 
@@ -250,7 +211,6 @@
         padding-top: 24px;
       }
       .section-head { grid-template-columns: 1fr; gap: 4px; margin-bottom: 1.2rem; }
-      .row { grid-template-columns: 1fr; gap: .08rem; }
       .step { grid-template-columns: 40px minmax(0, 1fr); }
       .hero { margin-bottom: 38px; }
     }
@@ -260,10 +220,10 @@
   <main class="page">
 
     <header class="hero" aria-labelledby="title">
-      <p class="kicker">est. about a year ago · one person's experiment</p>
-      <h1 id="title">The Interesting People's Fund</h1>
-      <p class="lede">It is not a fund. There are no checks, no term sheets, no LP updates. The asset under management is <em>three to four hours a week</em>, and it is invested in random interesting people.</p>
-      <p class="fine">A quiet argument that time, given away freely, compounds better than money.</p>
+      <p class="kicker">a standing offer · one person, a few hours a week</p>
+      <h1 id="title">The Side Project Fund</h1>
+      <p class="lede">It is not a fund. No checks, no equity, no term sheets. The only thing invested is <em>a few hours of my week</em>, and it goes to whoever reaches out with something they're building.</p>
+      <p class="fine">Stuck on a side project or a startup? Email me. That is the whole pitch.</p>
     </header>
 
     <section aria-labelledby="idea">
@@ -272,50 +232,14 @@
         <h2 id="idea">The Idea</h2>
       </div>
       <div class="prose">
-        <p>About a year ago I started something I half-jokingly call the <em>interesting people's fund</em>. The name is a lie in the most important way: it is not a check-writing fund. Not yet, anyway.</p>
-        <p>Instead of helping people with grants, I set aside three or four hours a week to help random people with their side projects and startups. That is the whole mechanism. No application, no cohort, no demo day. Just a standing allocation of attention for people building things they care about.</p>
-        <p class="aside">It turns out a few hours of focused help, from someone with no agenda, is a surprisingly rare resource.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="happened">
-      <div class="section-head">
-        <span class="section-num">§ 2</span>
-        <h2 id="happened">What Happened</h2>
-      </div>
-      <div class="prose">
-        <p>The portfolio, such as it is, is one year old. The returns, such as they are, look like this:</p>
-      </div>
-      <div class="rows">
-        <div class="row">
-          <span class="what">VC funding</span>
-          <span class="how">Tiny inputs that helped people get venture backed.</span>
-        </div>
-        <div class="row">
-          <span class="what">Internships landed</span>
-          <span class="how">Right conversation at the right time beats a hundred applications.</span>
-        </div>
-        <div class="row">
-          <span class="what">Hiring matches</span>
-          <span class="how">Someone found the perfect fit for a role they were hiring for.</span>
-        </div>
-        <div class="row">
-          <span class="what">Lifelong friends</span>
-          <span class="how">The dividend nobody models and everybody should.</span>
-        </div>
-        <div class="row">
-          <span class="what">An education</span>
-          <span class="how">I have learned more from these people than from almost anything else this year.</span>
-        </div>
-      </div>
-      <div class="prose">
-        <p class="pull">All of that — funded startups, offers, friendships — from one year's worth of spare hours.</p>
+        <p>I keep three or four hours a week open for people working on side projects and early startups. No application, no cohort, no demo day. Just a standing allocation of attention for anyone building something they care about.</p>
+        <p class="aside">A few focused hours from someone with no agenda turns out to be a surprisingly rare thing to ask for.</p>
       </div>
     </section>
 
     <section aria-labelledby="how">
       <div class="section-head">
-        <span class="section-num">§ 3</span>
+        <span class="section-num">§ 2</span>
         <h2 id="how">How It Works</h2>
       </div>
       <div class="steps">
@@ -327,53 +251,36 @@
         </div>
         <div class="step">
           <div>
-            <span class="what">We chat</span>
-            <span class="how">A call, a coffee, a long email thread. Whatever the problem wants.</span>
+            <span class="what">We talk</span>
+            <span class="how">A call, a coffee, a long email thread — whatever the problem wants.</span>
           </div>
         </div>
         <div class="step">
           <div>
             <span class="what">I help</span>
-            <span class="how">Feedback, intros, technical eyes, a second opinion — whatever a few hours can buy.</span>
+            <span class="how">Feedback, intros, a second pair of eyes on the code, a second opinion. Whatever a few hours can buy.</span>
           </div>
         </div>
         <div class="step">
           <div>
             <span class="what">No strings</span>
-            <span class="how">No equity, no favors owed, no follow-up obligation. Pay it forward if you like.</span>
+            <span class="how">No equity, no favors owed, no follow-up. Pay it forward if you ever feel like it.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="start">
-      <div class="section-head">
-        <span class="section-num">§ 4</span>
-        <h2 id="start">Start Your Own</h2>
-      </div>
-      <div class="prose">
-        <p>The uncomfortable truth about this experiment is that there is nothing special about it, or about me. Anyone with a few spare hours and a willingness to answer cold emails can run the same strategy. I hope you do.</p>
-        <div class="arithmetic">
-          <span>3–4 hours a week</span>
-          <span class="muted">× 52 weeks ≈ 200 hours a year</span>
-          <span class="sum">= funded startups, landed internships, perfect hires, lifelong friends</span>
-        </div>
-        <p>The ROI is absurd, and mostly it isn't measurable in money at all. You learn what people are building before anyone else does. You collect friends who are going somewhere. And helping someone at exactly the right moment is one of the cheapest ways to feel like your week mattered.</p>
-        <p class="aside">Highly recommend.</p>
-      </div>
-    </section>
-
     <section class="contact" aria-labelledby="contact">
       <div class="section-head" style="border-top: 0; padding-top: 0;">
-        <span class="section-num">§ 5</span>
-        <h2 id="contact">Get In Touch</h2>
+        <span class="section-num">§ 3</span>
+        <h2 id="contact">Reach Out</h2>
       </div>
-      <p>Working on a side project or a startup and want a second pair of eyes? The fund is open.</p>
+      <p>Working on something and want a second pair of eyes? The fund is open. Tell me what you're building and where you're stuck — one paragraph is plenty.</p>
       <a class="email" href="mailto:anishthite@gmail.com">anishthite@gmail.com</a>
     </section>
 
     <footer>
-      <p>An experiment by <a href="https://anish.thite.site">Anish Thite</a>. Not investment advice — there is no money involved.</p>
+      <p>Run by <a href="https://anish.thite.site">Anish Thite</a>. Not investment advice — there is no money involved.</p>
     </footer>
 
   </main>

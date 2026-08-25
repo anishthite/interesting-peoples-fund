@@ -1,8 +1,7 @@
-# The Interesting People's Fund
+# The Side Project Fund
 
-Not a check-writing fund. Three to four hours a week helping random
-interesting people with their side projects and startups — and the
-surprisingly good returns from one year of doing it.
+Not a fund. A few hours a week, given to whoever reaches out with a
+side project or a startup they're stuck on.
 
 A single-page static site in the thite.site style: et-book serif, warm
 paper background, no build step, no frameworks.
